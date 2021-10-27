@@ -1,0 +1,81 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/vehicles/create":
+    post:
+      summary: Creates a vehicle
+      tags:
+      - Vehicle
+      parameters: []
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                vehicle_identifier:
+                  type: string
+              required:
+              - vehicle_identifier
+          application/xml:
+            schema:
+              type: object
+              properties:
+                vehicle_identifier:
+                  type: string
+              required:
+              - vehicle_identifier
+  "/api/v1/gps":
+    post:
+      summary: Creates a gps point
+      tags:
+      - GPS
+      parameters: []
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                vehicle_identifier:
+                  type: string
+                latitude:
+                  type: float
+                longitude:
+                  type: float
+              required:
+              - vehicle_identifier
+              - latitude
+              - longitude
+          application/xml:
+            schema:
+              type: object
+              properties:
+                vehicle_identifier:
+                  type: string
+                latitude:
+                  type: float
+                longitude:
+                  type: float
+              required:
+              - vehicle_identifier
+              - latitude
+              - longitude
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

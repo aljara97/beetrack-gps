@@ -48,6 +48,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :test do
@@ -62,3 +63,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'power_api'
+gem 'geocoder'
+gem 'leaflet-rails'
+gem 'rswag'
+gem 'gmaps4rails'
+gem 'bootstrap-generators'

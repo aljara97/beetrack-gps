@@ -1,4 +1,5 @@
 class VehicleController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create]  
   def create
     @vehicle = Vehicle.new(vehicle_params)
     if @vehicle.save

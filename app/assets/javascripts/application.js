@@ -13,4 +13,13 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require bootstrap
 //= require_tree .
+
+$(document).on('turbolinks_load', function(){
+  if ($('#map').length > 0){
+    // Google Maps Javascript API
+    var google_map = $('meta[name=google_maps]').attr("content");
+    $.getScript(`https://maps.googleapis.com/maps/api/js?key=${google_maps}&callback=initMap`);
+  }
+})

@@ -18,8 +18,9 @@ class GpsPointController < ApplicationController
 
   end
 
-  def show
-
+  def index
+    @points = GpsPoint.all
+    render json: @points
   end
 
   def gps_params
